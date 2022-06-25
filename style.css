@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
 body {
     /* the element should occupy the web browser viewport height */
     min-height: 100vh;
     display: flex;
     /* Centers on horizontal axis */
-    justify-content: center; 
+    justify-content: center;
     /* Centers on vertical axis */
     align-items: center;
     /* https://uigradients.com/#Copper */
@@ -16,16 +17,16 @@ body {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.calculator{
-    background-color:beige;
+.calculator {
+    background-color: beige;
     width: 400px;
     border-radius: 11px;
     box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.55);
 }
 
-.calculator-display{
+.calculator-display {
     background: black;
-    color:wheat;
+    color: wheat;
     margin: 0;
     display: flex;
     align-items: center;
@@ -33,11 +34,77 @@ body {
     border-radius: 10px 10px 0 0;
 }
 
-.calculator-display h1{
+.calculator-display h1 {
     margin: 0;
     padding: 25px;
     font-size: 45px;
     font-family: 'Orbitron', 'Lucida Console', sans-serif;
     font-weight: 500;
     overflow-x: auto;
+}
+
+/* Buttons in GRID FORMAT */
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+button {
+    min-height: 50px;
+    font-size: 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: gray;
+}
+
+.operator {
+    font-size: 35px;
+    color: whitesmoke;
+}
+
+
+
+button:hover {
+    box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.24), 0 16px 16px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.equal-sign:active {
+    transform: translateY(5px);
+}
+
+.clear:active {
+    transform: translateY(5px);
+}
+
+/* Big '=' */
+.equal-sign {
+    grid-column: -2;
+    grid-row: 2/span 4;
+    background: green;
+}
+
+.equal-sign:hover {
+    filter: brightness(90%);
+}
+
+.clear {
+    background: royalblue;
+}
+
+.clear:hover {
+    filter: brightness(90%);
+}
+
+/* Media Queries for responsive design */
+@media screen and (max-width: 600px) {
+    .calculator {
+        width: 90%;
+    }
 }
